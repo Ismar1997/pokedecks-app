@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pokedecks-app/static/css/main.e6c13ad2.css",
+    "main.js": "/pokedecks-app/static/js/main.de757fa4.js",
+    "index.html": "/pokedecks-app/index.html",
+    "main.e6c13ad2.css.map": "/pokedecks-app/static/css/main.e6c13ad2.css.map",
+    "main.de757fa4.js.map": "/pokedecks-app/static/js/main.de757fa4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.de757fa4.js"
+  ]
+}
