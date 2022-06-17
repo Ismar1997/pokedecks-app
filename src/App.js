@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/pokedecks-app" element={<Pokedex />}></Route>
-        <Route path="/pokedecks-app/:pokemonId" element={<Pokemon />}></Route>
+        <Route path="/:pokemonId" element={<Pokemon />}></Route>
       </Routes>
     </BrowserRouter>
   );
