@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/pokedecks-app/static/css/main.e6c13ad2.css",
-    "main.js": "/pokedecks-app/static/js/main.6e6f3f6c.js",
+    "main.js": "/pokedecks-app/static/js/main.be008328.js",
     "index.html": "/pokedecks-app/index.html",
     "main.e6c13ad2.css.map": "/pokedecks-app/static/css/main.e6c13ad2.css.map",
-    "main.6e6f3f6c.js.map": "/pokedecks-app/static/js/main.6e6f3f6c.js.map"
+    "main.be008328.js.map": "/pokedecks-app/static/js/main.be008328.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.6e6f3f6c.js"
+    "static/js/main.be008328.js"
   ]
 }
