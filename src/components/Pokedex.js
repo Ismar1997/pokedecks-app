@@ -90,7 +90,8 @@ const Pokedex = () => {
   }, []);
 
   const handleSearchChange = (e) => {
-    setFilter(e.target.value);
+    const serachResult = e.target.value;
+    setFilter(serachResult.toLowerCase());
   };
 
   const getPokemonCard = (pokemonId) => {

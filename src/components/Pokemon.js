@@ -1,21 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ErrorPage from "./ErrorPage";
-import {
-  Paper,
-  Box,
-  Grid,
-  AppBar,
-  CircularProgress,
-  Button,
-} from "@mui/material";
-import { toFirstCharUppercase } from "./constants";
+import PokeInfo from "./PokeInfo";
+import { AppBar, Typography, CircularProgress, Button } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
-import { styled } from "@mui/material/styles";
-
-//////////////////////////////////      Styles         ///////////////////////////////
+import ErrorPage from "./ErrorPage";
 const useStyles = makeStyles((theme) => ({
   appbarImg: {
     height: "150px",
@@ -27,45 +17,20 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  pokemonStats: {
-    backgroundColor: "white",
-    borderRadius: "5px",
-    display: "flex",
-    flexDirection: "column",
-    flexWrap: "nowrap",
-    alignItems: "center",
-    justifyContent: "center",
-    margin: "auto",
-    width: "50%",
-  },
-  pokeInfo: {
-    textAlign: "center",
-  },
-  Item: {
-    fontFamily: "Orbitron, sans-serif",
-  },
 }));
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
-///////////////////////////////////////////////////////////////////////////////////////
 
 const Pokemon = () => {
   const classes = useStyles();
   let navigate = useNavigate();
   const { pokemonId } = useParams();
   const [pokemon, setPokemon] = useState(undefined);
+
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
       .then(function (response) {
         const { data } = response;
         setPokemon(data);
-        console.log(data);
       })
       .catch(function (error) {
         setPokemon(false);
@@ -73,7 +38,7 @@ const Pokemon = () => {
   }, [pokemonId]);
 
   const generatePokemonJSX = (pokemon) => {
-    const { name, id, species, height, weight, types } = pokemon;
+    const { name, id, abilities, height, weight, types } = pokemon;
     const fullImageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
     return (
@@ -95,138 +60,25 @@ const Pokemon = () => {
         <div className="pokemonInfos">
           <div className={classes.pokemonAll}>
             <img
-              alt={"poke-img"}
+              alt="pokemon-img"
               style={{
-                zIndex: "1",
                 position: "relative",
-                margin: "auto",
-                marginTop: "-20px",
-                top: "60px",
-                width: "300px",
-                height: "300px",
+                top: "55px",
+                zIndex: "1",
+                width: "55%",
+                maxWidth: "300px",
+                height: "auto",
               }}
               src={fullImageUrl}
             />
-
-            <Box
-              sx={{
-                boxShadow:
-                  "0 4px 25px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-                display: "grid",
-                alignItems: "center",
-                padding: "20px",
-                paddingTop: "80px",
-              }}
-              className={classes.pokemonStats}
-            >
-              <Grid container spacing={7} columnSpacing={2}>
-                <Grid item xs={12}>
-                  <Item
-                    elevation={0}
-                    style={{
-                      color: "	#000000",
-                      fontSize: "35px",
-                      fontWeight: "bold",
-                      fontFamily: "Orbitron",
-                      margin: "auto",
-                      width: "50%",
-                    }}
-                  >
-                    {toFirstCharUppercase(name)}
-                  </Item>
-                </Grid>
-                <Grid item xs={6}>
-                  <Item
-                    style={{
-                      color: "	#000000",
-                      fontSize: "15px",
-                      fontFamily: "Orbitron",
-                    }}
-                    elevation={0}
-                  >
-                    Species:
-                  </Item>
-                  <Item
-                    style={{
-                      color: "	#000000",
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                      fontFamily: "Orbitron",
-                    }}
-                  >
-                    {species.name}
-                  </Item>
-                </Grid>
-                <Grid zeroMinWidth item xs={6}>
-                  <Item
-                    style={{
-                      color: "	#000000",
-                      fontSize: "15px",
-                      fontFamily: "Orbitron",
-                    }}
-                    noWrap
-                    elevation={0}
-                  >
-                    Types:
-                  </Item>
-                  <Item
-                    style={{
-                      color: "	#000000",
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                      fontFamily: "Orbitron",
-                    }}
-                  >
-                    {toFirstCharUppercase(types[0].type.name)}/
-                    {toFirstCharUppercase(types[1].type.name)}
-                  </Item>
-                </Grid>
-                <Grid item xs={6}>
-                  <Item
-                    style={{
-                      color: "	#000000",
-                      fontSize: "15px",
-                      fontFamily: "Orbitron",
-                    }}
-                    elevation={0}
-                  >
-                    Weight:
-                  </Item>
-                  <Item
-                    style={{
-                      color: "	#000000",
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                      fontFamily: "Orbitron",
-                    }}
-                  >
-                    {weight} kg
-                  </Item>
-                </Grid>
-                <Grid item xs={6}>
-                  <Item
-                    style={{
-                      color: "	#000000",
-                      fontSize: "15px",
-                      fontFamily: "Orbitron",
-                    }}
-                    elevation={0}
-                  >
-                    Height:
-                  </Item>
-                  <Item
-                    style={{
-                      color: "	#000000",
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                      fontFamily: "Orbitron",
-                    }}
-                  >
-                    {height} m
-                  </Item>
-                </Grid>
-              </Grid>
-            </Box>
+            <PokeInfo
+              name={name}
+              id={id}
+              abilities={abilities}
+              height={height}
+              weight={weight}
+              types={types}
+            />
           </div>
         </div>
       </>
@@ -247,7 +99,6 @@ const Pokemon = () => {
         </div>
       )}
       {pokemon !== undefined && pokemon && generatePokemonJSX(pokemon)}
-
       {pokemon === false && (
         <div
           style={{
@@ -275,7 +126,7 @@ const Pokemon = () => {
             onClick={() => navigate("/")}
           >
             Back to pokedex
-          </Button>{" "}
+          </Button>
         </div>
       )}
     </>
