@@ -98,7 +98,10 @@ const Pokedex = () => {
     const { id, name, sprite } = pokemonData[pokemonId];
     return (
       <Grid item xs={4} key={pokemonId}>
-        <Card className={classes.card} onClick={() => navigate(`/${id}`)}>
+        <Card
+          className={classes.card}
+          onClick={() => navigate(`/pokedecks-app/${id}`)}
+        >
           <Typography
             style={{
               color: "	#000000",

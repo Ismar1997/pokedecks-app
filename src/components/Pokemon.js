@@ -123,7 +123,7 @@ const Pokemon = () => {
               marginBottom: "100px",
             }}
             variant="contained"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/pokedecks-app")}
           >
             Back to pokedex
           </Button>
