@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/pokedecks-app" element={<Pokedex />}></Route>
         <Route path="/pokedecks-app/:pokemonId" element={<Pokemon />}></Route>
-        <Route path="*" element={<ErrorPage />}></Route>
+        <Route path="" element={<ErrorPage />}></Route>
       </Routes>
     </BrowserRouter>
   );

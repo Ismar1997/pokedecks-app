@@ -17,7 +17,7 @@ import { toFirstCharUppercase } from "./constants";
 import axios from "axios";
 const useStyles = makeStyles((theme) => ({
   pokedexContainer: {
-    paddingTop: "50px",
+    paddingTop: "70px",
     paddingLeft: "150px",
     paddingRight: "150px",
   },
@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     textAlign: "center",
     paddingTop: "10px",
+    width: "100%",
   },
   cardContent: {
     textAlign: "center",
@@ -97,7 +98,7 @@ const Pokedex = () => {
   const getPokemonCard = (pokemonId) => {
     const { id, name, sprite } = pokemonData[pokemonId];
     return (
-      <Grid item xs={4} key={pokemonId}>
+      <Grid item xs={12} sm={6} md={4} key={pokemonId}>
         <Card
           className={classes.card}
           onClick={() => navigate(`/pokedecks-app/${id}`)}
