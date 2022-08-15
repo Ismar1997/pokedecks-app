@@ -1,4 +1,35 @@
-# Getting Started with Create React App
+
+# Pokedecks 
+
+- [About](#about)
+- [Getting Started with the App](#getting-started-with-the-app)
+
+## About
+**Pokedecks** is designed Pokédex app for everyone to use. It contains detailed data on every single Pokémon, fo+rom every main series game ever released, series or comics. 
+ App uses **PokeAPI** to get all the information about all the pokemons that are included with API.  
+
+You use the search bar in the top of the website to search for the pokemon you want to see information about. Even if you just search letters that are in the name of the pokemon you are looking for, it will be displayed on your screen.
+
+**Homepage :**
+![screely-1660566385714](https://user-images.githubusercontent.com/66185833/184636580-00abb061-026d-44a8-8903-1aa72be5e32f.png)
+
+
+
+**Pokemon page :**
+![screely-1660566410140](https://user-images.githubusercontent.com/66185833/184636528-51fe93bb-11c9-4500-86a0-751059930cef.png)
+
+**Technologies** that are used for this project :
+
+- `HTML`
+- `CSS`
+- `Javascript`
+- `React.js`
+**Libraries,packages and frameworks** that are used for this project :
+- `Material UI`
+- `react-axios`
+
+
+# Getting Started with App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +99,56 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## API Reference
+
+#### Get all pokemons
+
+```http
+  GET /pokeapi.co/api/v2/pokemon/
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+#### Get pokemon
+
+```http
+  GET /pokeapi.co/api/v2/pokemon/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of pokemon to fetch |
+
+
+It returns all the info about the pokemon you searched for.
+
