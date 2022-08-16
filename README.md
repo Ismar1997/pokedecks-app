@@ -24,6 +24,7 @@ You use the search bar in the top of the website to search for the pokemon you w
 - `CSS`
 - `Javascript`
 - `React.js`
+
 **Libraries,packages and frameworks** that are used for this project :
 - `Material UI`
 - `react-axios`
