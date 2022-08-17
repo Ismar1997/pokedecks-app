@@ -5,7 +5,7 @@
 - [Getting Started with the App](#getting-started-with-the-app)
 
 ## About
-**Pokedecks** is designed Pokédex app for everyone to use. It contains detailed data on every single Pokémon, fo+rom every main series game ever released, series or comics. 
+**Pokedecks** is designed Pokédex app for everyone to use. It contains detailed data on every single Pokémon, from every main series game ever released, series or comics. 
  App uses **PokeAPI** to get all the information about all the pokemons that are included with API.  
 
 You use the search bar in the top of the website to search for the pokemon you want to see information about. Even if you just search letters that are in the name of the pokemon you are looking for, it will be displayed on your screen.
