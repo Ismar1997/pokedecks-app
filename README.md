@@ -29,6 +29,8 @@ You use the search bar in the top of the website to search for the pokemon you w
 - `Material UI`
 - `react-axios`
 
+** App is live on this URL : https://ismar1997.github.io/pokedecks-app/
+
 
 # Getting Started with App
 
