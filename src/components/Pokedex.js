@@ -155,7 +155,7 @@ const Pokedex = () => {
             <TextField
               className={classes.searchInput}
               onChange={handleSearchChange}
-              label="Search for Pokemon"
+              label="Find Pokemon"
               variant="standard"
             />
           </div>
